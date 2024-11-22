@@ -1,22 +1,21 @@
 {
     "version": "2.0.0",
     "tasks": [
-      {
-        "label": "Build Project",
-        "type": "shell",
-        "command": "g++",
-        "args": [
-          "-std=c++17",
-          "-o",
-          "build/main.exe",
-          "src/main.cpp"
-        ],
-        "group": {
-          "kind": "build",
-          "isDefault": true
-        },
-        "problemMatcher": ["$gcc"]
-      }
+        {
+            "label": "Build Current File",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-std=c++17",
+                "-o",
+                "${workspaceFolder}/build/${fileBasenameNoExtension}.exe",
+                "${file}"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "problemMatcher": ["$gcc"]
+        }
     ]
-  }
-  
+}
